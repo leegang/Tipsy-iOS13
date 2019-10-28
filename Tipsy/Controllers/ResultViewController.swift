@@ -9,6 +9,8 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    var resultText:String?
+    var infoText:String?
     
     @IBOutlet weak var billResultLable: UILabel!
     @IBOutlet weak var billInfoLabel: UILabel!
@@ -21,6 +23,8 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        billResultLable.text = resultText
+        billInfoLabel.text = infoText
 
         // Do any additional setup after loading the view.
     }

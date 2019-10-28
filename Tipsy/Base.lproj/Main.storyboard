@@ -44,6 +44,9 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yx-RO-DO2"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y6-Kf-yF0">
                                                         <rect key="frame" x="100.5" y="0.0" width="173" height="54"/>
@@ -55,6 +58,9 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kih-tO-J7w"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-dU-EKt">
                                                         <rect key="frame" x="273.5" y="0.0" width="100.5" height="54"/>
@@ -149,6 +155,9 @@
                                         <color key="textColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="billInputEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="6ap-Az-fld"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -194,9 +203,10 @@
                     <connections>
                         <outlet property="billTextFiled" destination="wcN-ka-Q4F" id="tRQ-Ku-7Dw"/>
                         <outlet property="splitNumberLabel" destination="bSy-Yc-886" id="5ee-zz-fYm"/>
-                        <outlet property="tenButton" destination="7y6-Kf-yF0" id="erb-Da-t9f"/>
-                        <outlet property="twentyButton" destination="UtR-dU-EKt" id="lqy-y0-X8M"/>
-                        <outlet property="zeroButton" destination="XzR-0E-Xf7" id="Afy-5X-3Qe"/>
+                        <outlet property="splitStepper" destination="haq-5m-pqs" id="IVa-lP-MmN"/>
+                        <outlet property="tenButton" destination="7y6-Kf-yF0" id="m3N-zf-Srv"/>
+                        <outlet property="twentyButton" destination="UtR-dU-EKt" id="Eet-Zp-fnG"/>
+                        <outlet property="zeroButton" destination="XzR-0E-Xf7" id="fy1-iH-oc4"/>
                         <segue destination="Dnf-m2-FPm" kind="presentation" identifier="toResult" id="Wnu-Gi-5QC"/>
                     </connections>
                 </viewController>
