@@ -18,7 +18,7 @@ struct BillBrain {
     }
     
     mutating func getBillResultText() -> String {
-        billResultText = String(format: "%.4f", billResult)
+        billResultText = String(format: "%.2f", billResult)
         return billResultText
     }
     

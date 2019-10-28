@@ -8,7 +8,7 @@
 
 import UIKit
 var tips = 0.0
-var splitNumber = 1.0
+var splitNumber = 2.0
 var billResult = 0.0
 var inputBill:Double = 0
 var tipsTitle = "10%"
@@ -61,18 +61,21 @@ class CalculateViewController: UIViewController {
     
     
     @IBAction func splitSteperChange(_ sender: UIStepper) {
+        billTextFiled.endEditing(true)
         splitStepper.maximumValue = 12
         splitNumber = sender.value
         splitNumberLabel.text = billBrain.getSplitLabel(splitNumber: splitNumber)
        
     }
     @IBAction func billInputEnd(_ sender: UITextField) {
-        inputBill = Double(billTextFiled.text!) as! Double
-        
+        if billTextFiled.text != "" {
+            inputBill = Double(billTextFiled.text!)! as! Double
+        }
         print(inputBill)
     }
     
     @IBAction func calculateButtonPress(_ sender: UIButton) {
+        billTextFiled.endEditing(true)
         billBrain.calculateBill(tips:tips, splitNumber: splitNumber,inputBill: inputBill)
         print(billBrain.getBillResultText())
         self.performSegue(withIdentifier: "toResult", sender: nil)
@@ -80,13 +83,12 @@ class CalculateViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        let destinationVC = segue.destination as! ResultViewController
-        destinationVC.resultText = billBrain.getBillResultText()
-        destinationVC.infoText = "Split between \(billBrain.getSplitLabel(splitNumber: splitNumber)) people,with \(tipsTitle ) tip."
-        
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.resultText = billBrain.getBillResultText()
+            destinationVC.infoText = "Split between \(billBrain.getSplitLabel(splitNumber: splitNumber)) people,with \(tipsTitle ) tip."
+        }
     }
-    
 
 }
 
